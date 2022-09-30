@@ -40,7 +40,6 @@ const stringD1 = 'abcba';
 const stringD2 = '12321';
 const stringD3 = '_1a1_';
 
-//let expRegD = /[\w]+/;
 let expRegD = /[\w]{2}\w[\w]{2}/;
 
 console.log(expRegD.test(stringD1));
@@ -58,18 +57,6 @@ const stringE6 = 'Mouse';
 const stringE7 = 'Ape';
 const stringE8 = 'You';
 
-// let expRegE = /(?<=[b-y])[b-yB-Y]+/;
-// let expRegE2 = /a|A|z|Z/;
-
-// console.log(expRegE.test(stringE1));
-// console.log(expRegE.test(stringE2));
-// console.log(expRegE.test(stringE3));
-// console.log(expRegE.test(stringE4));
-// console.log(expRegE.test(stringE5));
-// console.log(expRegE.test(stringE6));
-// console.log(expRegE.test(stringE7));
-// console.log(expRegE.test(stringE8));
-
 const wordsToMatch = ['Bee', 'zapp', 'Crow', 'Eagle', 'Zorro', 'mouse', 'Ape', 'You'];
 
 function match(array){
@@ -85,19 +72,6 @@ function match(array){
 
 wordsMatched = match(wordsToMatch);
 console.log(wordsMatched);
-
-
-// const stringF = 'Is <b>4 < -1/12</b> true? The <b>answer</b> will <em>surprise</em> you.';
-
-// function nestedTags(string){
-//     const expRegF = /(<\w+>[\w\s\<\-\/]+<\/\w+>)/g;
-//     let arrayMatched = string.match(expRegF);
-//     return arrayMatched;
-// }
-
-// arrayNestedTags = nestedTags(stringF);
-// console.log(arrayNestedTags)
-
 
 const stringF = 'Is <b>4 < -1/12</b> true? The <b>answer</b> will <em>surprise</em> you.';
 
