@@ -10,8 +10,8 @@ let expReg9 = /(abc)/;
 let expReg10 = /[a-zA-z_\$\.]+[a-zA-z_\$0-9\.]*@[a-zA-z_\$\.]+[a-zA-z_\$0-9\.]*\.(com|net|org){1}/;
 let expReg11 = /\([0oOn]{1}(_|\s)[0oOn]{1}\)/;
 
-const string1 = 'we .abcde fghij .abc efge';
-const string2 = 'caaaaab!!1111';
+const string1 = 'The three first five letters of the alphabet after a dot are .abcde';
+const string2 = 'Whaaaaab!!1111';
 const string3 = '....a.b';
 const string4 = 'Amazon'; // \w matches lower or upper letters
 const string5 = 'Hello there';
