@@ -1,40 +1,32 @@
-let wordTwo = 'aK89'
+// Unicode values:
+// 0 - 9 : 48 - 57
+// a - z : 97 - 122
+// A - Z : 65 - 90
 
 function shift(string) {
-
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
-    let numbers = '0123456789';
-
     let stringShifted = '';
-    let regexA = /[A-Z]/;
-    let regexN = /[0-9]/;
-    for(let i = 0; i < string.length; i++){
-        if(regexN.test(string[i])){
-            if(string[i]=='9'){
-                stringShifted = stringShifted + '0';
-            }
-            else{
-                let indexNumbers = numbers.indexOf(string[i]);
-                stringShifted = stringShifted + numbers[indexNumbers+1];
-            }
+    let regexa = /[a-y]/, regexA = /[A-Y]/, regexN = /[0-8]/;
+
+    arrayCharacters = string.split('');
+
+    arrayCharacters.map(function(character){
+        if (character.match(regexa) || character.match(regexA) || character.match(regexN)){
+            stringShifted = stringShifted + String.fromCharCode(character.charCodeAt()+1);
         }
-        else if (regexA.test(string[i])){
-            stringLower = string[i].toLowerCase();
-            stringShifted = stringShifted + shift(stringLower).toUpperCase();
+        switch(character){
+            case 'z':
+                stringShifted = stringShifted + String.fromCharCode('a'.charCodeAt());
+                break;
+            case 'Z':
+                stringShifted = stringShifted + String.fromCharCode('A'.charCodeAt());
+                break;
+            case '9':
+                stringShifted = stringShifted + String.fromCharCode('0'.charCodeAt());
+                break;
         }
-        else {
-            if(string[i]=='z'){
-                stringShifted = stringShifted + 'a';
-            }
-            else {
-                let indexAlphabet = alphabet.indexOf(string[i]);
-                stringShifted = stringShifted + alphabet[indexAlphabet+1];
-            }
-        }
-    }
-    return stringShifted
+    })
 }
 
-wordTwoShifted = shift(wordTwo);
+let wordTwo = 'ayzK89';
 
-console.log(wordTwoShifted);
+shift(wordTwo);
