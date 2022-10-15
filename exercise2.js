@@ -1,77 +1,74 @@
-const stringA1 = 'September 29, 2017';
+//***** A *****/
+
+const stringA1 = 'September 29, 2017 2';
 const stringA2 = 'February 99, 0001';
 const stringA3 = 'June 04, 3000';
 
-let expRegA = /\w+\s\d{2}\,\s\d{4}/;
+let expRegA = /\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+[0-3][0-9],\s+[0-2][0-9]{3}\b/;
 
 console.log(expRegA.test(stringA1));
 console.log(expRegA.test(stringA2));
 console.log(expRegA.test(stringA3));
 
-console.log(stringA3.match(expRegA));
+
+//***** B *****/
+
 
 const stringB1 = 'A52';
 const stringB2 = 'd747';
 const stringB3 = '27X';
 const stringB4 = 'v2';
 
-let expRegB = /[a-zA-z]/;
+let expRegB = /\b[0-9]+[a-zA-Z]\b|\b[[a-zA-Z][0-9]+\b/;
 
 console.log(expRegB.test(stringB1));
 console.log(expRegB.test(stringB2));
 console.log(expRegB.test(stringB3));
 console.log(expRegB.test(stringB4));
 
-console.log(stringB3.match(expRegB));
+
+//***** C *****/
+
 
 const stringC1 = 'test.java';
 const stringC2 = 'program.cpp';
 const stringC3 = 'newReport.txt';
 
-let expRegC = /[a-zA-z]+.[a-zA-z]+/;
+let expRegC = /[a-zA-z]+.(java|cpp|txt)/;
 
 console.log(expRegC.test(stringC1));
 console.log(expRegC.test(stringC2));
 console.log(expRegC.test(stringC3));
 
-console.log(stringC3.match(expRegC));
+
+//***** D *****/
+
 
 const stringD1 = 'abcba';
 const stringD2 = '12321';
 const stringD3 = '_1a1_';
 
-let expRegD = /[\w]{2}\w[\w]{2}/;
+let expRegD = /\b[\w]{2}\w[\w]{2}\b/;
 
 console.log(expRegD.test(stringD1));
 console.log(expRegD.test(stringD2));
 console.log(expRegD.test(stringD3));
 
-console.log(stringD3.match(expRegD));
 
-const stringE1 = 'Bee';
-const stringE2 = 'zapp';
-const stringE3 = 'Crow';
-const stringE4 = 'Eagle';
-const stringE5 = 'Zorro';
-const stringE6 = 'Mouse';
-const stringE7 = 'Ape';
-const stringE8 = 'You';
+//***** E *****/
 
-const wordsToMatch = ['Bee', 'zapp', 'Crow', 'Eagle', 'Zorro', 'mouse', 'Ape', 'You'];
 
-function match(array){
-    let arrayMatched = [];
-    let expRegE = /a|A|z|Z/;
-    for(let i=0; i<array.length; i++){
-        if (!expRegE.test(array[i])){
-            arrayMatched.push(array[i]);
-        }
-    }
-    return arrayMatched;
-}
+const wordsToMatch = 'Bee zapp Crow Eagle Zorro mouse Ape You';
 
-wordsMatched = match(wordsToMatch);
-console.log(wordsMatched);
+let expRegE = /\b[b-yB-Y]+\b/g;
+
+wordsMatchedBY = wordsToMatch.match(expRegE)
+
+console.log(wordsMatchedBY)
+
+
+//***** F *****/
+
 
 const stringF = 'Is <b>4 < -1/12</b> true? The <b>answer</b> will <em>surprise</em> you.';
 
