@@ -34,7 +34,7 @@ const stringC1 = 'test.java';
 const stringC2 = 'program.cpp';
 const stringC3 = 'newReport.txt';
 
-let expRegC = /[a-zA-z]+.(java|cpp|txt)/;
+let expRegC = /^[a-zA-z]+.(java|cpp|txt)$/;
 
 console.log(expRegC.test(stringC1));
 console.log(expRegC.test(stringC2));
@@ -48,11 +48,17 @@ const stringD1 = 'abcba';
 const stringD2 = '12321';
 const stringD3 = '_1a1_';
 
-let expRegD = /\b[\w]{2}\w[\w]{2}\b/;
+function palindrome (word){
+    let wordOne = word[0]+word[1],
+    wordTwo = word[1]+word[0];
+    let regex = '^' + wordOne + '\\w' + wordTwo + '$';
+    let expReg = new RegExp(regex);
+    return expReg
+}
 
-console.log(expRegD.test(stringD1));
-console.log(expRegD.test(stringD2));
-console.log(expRegD.test(stringD3));
+console.log(palindrome(stringD1).test(stringD1));
+console.log(palindrome(stringD2).test(stringD2));
+console.log(palindrome(stringD3).test(stringD3));
 
 
 //***** E *****/

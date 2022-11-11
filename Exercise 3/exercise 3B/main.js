@@ -1,5 +1,6 @@
-document.getElementById("stringbtn").onclick = function(){
+let stringButton = document.getElementById("stringbtn");
 
+stringButton.addEventListener("click", (event) =>{
     let paragraph = document.getElementById("paragraph");
     let container = document.getElementById("paragraphContainer");
     let paragraphContent = paragraph.textContent;
@@ -17,5 +18,4 @@ document.getElementById("stringbtn").onclick = function(){
 
     let paragraph2 = document.getElementById('newParagraph');
     paragraph2.insertAdjacentHTML("beforeend",newParagraphContent);
-    
-}
+})
