@@ -1,14 +1,14 @@
 function shift(word) {
-    regex = new RegExp ('\\w','g');
+    let regex = new RegExp ('[a-zA-z0-9]','g');
     function replacer(character){
         if(character == 'z'){
-            return String.fromCharCode('a'.charCodeAt());
+            return 'a';
         }
         else if (character == 'Z'){
-            return String.fromCharCode('A'.charCodeAt());
+            return 'A';
         }
         else if (character == '9'){
-            return String.fromCharCode('0'.charCodeAt());
+            return '0';
         }
         else {
             return String.fromCharCode(character.charCodeAt()+1)

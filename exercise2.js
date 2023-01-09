@@ -49,9 +49,7 @@ const stringD2 = '12321';
 const stringD3 = '_1a1_';
 
 function palindrome (word){
-    let wordOne = word[0]+word[1],
-    wordTwo = word[1]+word[0];
-    let regex = '^' + wordOne + '\\w' + wordTwo + '$';
+    let regex = /(.)(?:(.)(.)\2)\1/
     let expReg = new RegExp(regex);
     return expReg
 }
